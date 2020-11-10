@@ -15,7 +15,7 @@ const User =require("../../models/User")
  * @access 接口公开
  */
 
-router.get('/test', ctx=>{
+router.get('/test',async ctx=>{
     ctx.status = 200
     ctx.body={msg:'users works....'}
 })
@@ -25,9 +25,9 @@ router.get('/test', ctx=>{
  * @desc 注冊接口
  * @access 接口公开
  */
-router.post('/register',async ctx=>{
+router.post('/register', ctx=>{
     //存储数据库
-    const findResult=await User.find({email:ctx.request.body.email})
+    const findResult= User.find({email:ctx.request.body.email})
     console.log(findResult)
     if(findResult.length>0){
         ctx.status=200;
@@ -42,14 +42,14 @@ router.post('/register',async ctx=>{
             avatar
         });
         //加密
-    await bcrypt.genSalt(10, function(err, salt) {
+     bcrypt.genSalt(10, function(err, salt) {
             bcrypt.hash(newUser.pwd, salt, (err, hash)=> {
                 // Store hash in your password DB.
                 if(err) throw err
                 newUser.pwd=hash
             });
         });
-      await newUser
+       newUser
           .save()
           .then(user=>{
           ctx.body={
