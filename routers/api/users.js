@@ -15,7 +15,7 @@ const User =require("../../models/User")
  * @access 接口公开
  */
 
-router.get('/test',async ctx=>{
+router.get('/test', ctx=>{
     ctx.status = 200
     ctx.body={msg:'users works....'}
 })
