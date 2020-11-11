@@ -42,6 +42,7 @@ router.post('/register', ctx=>{
     //存储数据库
     const findResult= User.find({email:ctx.request.body.email})
     console.log(findResult)
+    console.log(11111111)
     if(findResult.length>0){
         ctx.status=200;
         ctx.body={code:500,message:"邮箱已被占用"}
