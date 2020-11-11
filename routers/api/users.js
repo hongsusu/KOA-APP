@@ -73,7 +73,7 @@ router.post('/register', ctx=>{
           console.log(err)
       }))
         //返回json数据
-        ctx.bosy=newUser
+        ctx.body=newUser
     }
 })
 
