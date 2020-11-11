@@ -20,8 +20,21 @@ router.get('/test', ctx=>{
     ctx.body={msg:'users works....'}
 })
 
+
 /**
- * router GET apis/users/test
+ * router POST apis/users/test1
+ * @desc 测试post
+ * @access 接口公开
+ */
+router.post('/test1', ctx=>{
+    ctx.body = {
+        code:1,
+        postParams:ctx.request.body
+    }
+})
+
+/**
+ * router POST apis/users/register
  * @desc 注冊接口
  * @access 接口公开
  */
