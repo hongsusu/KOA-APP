@@ -6,7 +6,7 @@ const bodyParser =require('koa-bodyparser')
 
 mongoose.connect(
     db,
-    { useNewUrlParser: true }
+    { useNewUrlParser: true ,useUnifiedTopology: true}
 ).then(()=>console.log('MongoDB Connected'))
     .catch(err=>{
         console.log(err)
