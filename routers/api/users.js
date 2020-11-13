@@ -10,7 +10,7 @@ const User =require("../../models/User")
 //test
 //路由
 /**
- * router GET apis/users/test
+ * router GET api/users/test
  * @desc 测试接口地址
  * @access 接口公开
  */
@@ -22,7 +22,7 @@ router.get('/test',async ctx=>{
 
 
 /**
- * router POST apis/users/test1
+ * router POST api/users/test1
  * @desc 测试post
  * @access 接口公开
  */
